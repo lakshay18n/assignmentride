@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://assignmentride.onrender.com";
 
 const tabLogin = document.getElementById('tab-login');
 const tabRegister = document.getElementById('tab-register');
