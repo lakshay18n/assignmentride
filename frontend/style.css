@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-color: #0f0f0f;
+    --card-bg: #1a1a1a;
+    --accent: #f5c518;
+    --text-main: #ffffff;
+    --text-muted: #aaaaaa;
+    --error: #ff4444;
+    --success: #00c853;
+    --pending: #808080;
+    --assigned: #2979ff;
+    --border-radius-card: 12px;
+    --border-radius-input: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.auth-card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: var(--border-radius-card);
+    width: 100%;
+    max-width: 400px;
+}
+
+.brand {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.tabs {
+    display: flex;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #333;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.tab.active {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    background-color: #252525;
+    border: 1px solid #333;
+    border-radius: var(--border-radius-input);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 5px rgba(245, 197, 24, 0.3);
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--accent);
+    color: #000;
+    border: none;
+    border-radius: var(--border-radius-input);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+#auth-error {
+    color: var(--error);
+    font-size: 14px;
+    text-align: center;
+    margin-top: 15px;
+    min-height: 20px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #333;
+    margin-bottom: 30px;
+}
+
+.nav-brand {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logout-link {
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dashboard-split {
+    display: flex;
+    gap: 40px;
+}
+
+.left-panel, .right-panel {
+    flex: 1;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.ride-card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: var(--border-radius-card);
+    margin-bottom: 15px;
+    border-left: 4px solid #333;
+}
+
+.ride-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.ride-route {
+    font-weight: 600;
+}
+
+.ride-meta {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-pending { background-color: #444; color: #fff; }
+.status-assigned { background-color: #2979ff; color: #fff; }
+.status-cancelled { background-color: #ff4444; color: #fff; }
+.status-completed { background-color: #00c853; color: #fff; }
+
+.cancel-btn {
+    margin-top: 12px;
+    padding: 6px 12px;
+    background-color: transparent;
+    border: 1px solid var(--error);
+    color: var(--error);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-split {
+        flex-direction: column;
+    }
+}

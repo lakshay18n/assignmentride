@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | RideFlow</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav">
+            <div class="nav-brand">RideFlow 🚗</div>
+            <div class="nav-user">
+                <span id="welcome-user">Hi, User</span>
+                <span class="logout-link" id="logout-btn">Logout</span>
+            </div>
+        </div>
+
+        <div class="dashboard-split">
+            <!-- LEFT PANEL: BOOK A RIDE -->
+            <div class="left-panel">
+                <h2>Book a Ride</h2>
+                <div class="ride-card">
+                    <form id="book-form">
+                        <div class="form-group">
+                            <label>Pickup Location</label>
+                            <input type="text" id="pickup" placeholder="Enter pickup point" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Drop Location</label>
+                            <input type="text" id="drop" placeholder="Enter destination" required>
+                        </div>
+                        <button type="submit" class="btn" id="book-btn">Book Now</button>
+                    </form>
+                </div>
+
+                <!-- Current Active Ride (Dynamic) -->
+                <div id="active-ride-section" style="display: none;">
+                    <h2>Active Ride</h2>
+                    <div id="active-ride-container"></div>
+                </div>
+            </div>
+
+            <!-- RIGHT PANEL: RIDE HISTORY -->
+            <div class="right-panel">
+                <h2>My Rides</h2>
+                <div id="ride-history-list">
+                    <!-- Rides will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
